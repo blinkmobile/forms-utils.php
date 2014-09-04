@@ -1,6 +1,6 @@
 {
   "name": "blinkmobile-forms-utils",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Blink Mobility Platform",
   "repository": "git@github.com:blinkmobile/forms-utils.php.git",
   "dependencies": {},

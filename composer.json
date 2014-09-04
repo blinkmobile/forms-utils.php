@@ -1,6 +1,7 @@
 {
   "name": "blink/composer-example",
   "description": "Description of project composer-example.",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "blink",
