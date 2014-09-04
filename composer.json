@@ -1,11 +1,11 @@
 {
-  "name": "blink/composer-example",
+  "name": "blinkmobile/forms-utils.php",
   "description": "Description of project composer-example.",
   "version": "1.0.0",
   "authors": [
     {
-      "name": "blink",
-      "email": "bmp@blinkmobile.com.au"
+      "name": "geeta",
+      "email": "geeta.sajwan@gmail.com"
     }
   ],
   "require-dev": {
