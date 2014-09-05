@@ -1,10 +1,12 @@
 <?php
 
-namespace blinkmobile\forms\utils\errors;
+// namespace blinkmobile\forms\utils\errors;
+require_once realpath(dirname(__FILE__) . '/../../../../../vendor') . '/autoload.php';
 
-require_once "bmp-forms-errors.php";
+use \blinkmobile\forms\utils\errors\Validation;
 
-class errorsTest extends \PHPUnit_Framework_TestCase
+
+class ValidationTest extends \PHPUnit_Framework_TestCase
 {
     private $validator;
 

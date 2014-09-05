@@ -1,7 +1,9 @@
 {
   "name": "blinkmobile/forms-utils.php",
-  "description": "Description of project composer-example.",
+  "type": "library",
+  "description": "errors array format validation",
   "version": "1.0.0",
+  "license": "MIT",
   "authors": [
     {
       "name": "geeta",
@@ -10,5 +12,11 @@
   ],
   "require-dev": {
     "phpunit/phpunit": "3.7.*"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "blinkmobile\\forms\\utils\\errors\\" : "blinkmobile/forms/utils/errors/src/"
+    }
   }
 }

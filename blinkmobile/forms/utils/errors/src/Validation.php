@@ -50,7 +50,7 @@ class Validation
     $path = trim($path, '/');
     $fields = explode('/', $path);
     $temp =& $this->errors;
-    
+
     foreach ($fields as $field) {
         if (!isset($temp[$field])) {
             $temp[$field] = array();
