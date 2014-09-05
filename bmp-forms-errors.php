@@ -27,14 +27,18 @@ class Validation
     if (!empty($errorsList)) {
       //converting array into $fieldPath => $message
       foreach ($errorsList as $key => $value) {
-        $message = $this->getMessage($key, $value);
-        $pos = strrpos($key, '/');
+        if (gettype($value) === 'string') {
+          $message = $this->getMessage($key, $value);
+          $pos = strrpos($key, '/');
 
-        if ($pos === false) {
-          $this->errors[$key] = $message;
+          if ($pos === false) {
+            $this->errors[$key] = $message;
+          } else {
+            $this->setMessage($key, $message);
+          }//end else ($pos === false)
         } else {
-          $this->setMessage($key, $message);
-        }//end else ($pos === false)
+          $this->errors[$key] = $value;
+        }
       }// end foreach
     }// end if
   }
@@ -46,6 +50,7 @@ class Validation
     $path = trim($path, '/');
     $fields = explode('/', $path);
     $temp =& $this->errors;
+    
     foreach ($fields as $field) {
         if (!isset($temp[$field])) {
             $temp[$field] = array();

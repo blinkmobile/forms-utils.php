@@ -80,7 +80,7 @@ class errorsTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    public function testNewformatForErrors()
+    public function testConversionFromOldToNew ()
     {
         $list = array (
           'Rank' => ' is rank req',
@@ -126,6 +126,54 @@ class errorsTest extends \PHPUnit_Framework_TestCase
         );
 
       $this->assertEquals($list, $this->validator->getErrors());
+    }
+
+    public function testErrorsWithNewFormat()
+    {
+        $list = array (
+          'Rank' => ' is rank req',
+          'Num' => ' is num req',
+          'Details' => array(
+            0 => array(
+              'Age' => ' is age req0',
+              'option' => ' is option req0'
+            ),
+            1 => array(
+              'Age' => ' is age req1',
+              'option' => ' is option req1'
+            ),
+            2 => array(
+              'Age' => ' is age req2',
+              'option' => ' is option req2'
+            ),
+            3 => array(
+              'Age' => ' is age req3',
+              'option' => ' is option req3'
+            ),
+            4 => array(
+              'Age' => ' is age /req4',
+              'option' => ' is option req4'
+            ),
+            5 => array(
+              'Age' => ' is age req5',
+              'option' => ' is option req5'
+            ),
+            6 => array(
+              'Age' => ' is age /req6',
+              'subform' => array(
+                1 => array(
+                  'name' => ' is option /req61'
+                ),
+                2 => array(
+                  'name' => ' is option /req62'
+                )
+              ),
+              'option' => ' is option /req'
+            )
+          )
+        );
+      $newValidator = $this->getValidation($list);
+      $this->assertEquals($list, $newValidator->getErrors());
     }
 
     private function getValidation($list)
