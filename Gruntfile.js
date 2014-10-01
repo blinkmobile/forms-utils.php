@@ -12,7 +12,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     phpunit: {
       classes: {
-        dir: 'tests'
+        dir: 'blinkmobile/forms/utils/errors/tests'
       },
       options: {
         bin: 'php vendor/phpunit/phpunit/phpunit.php',
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     },
     watch: {
       test: {
-        files: ['tests/*.php'],
+        files: ['blinkmobile/forms/utils/errors/tests/*.php'],
         tasks: ['phpunit']
       }
     }
